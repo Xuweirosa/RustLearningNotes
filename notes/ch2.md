@@ -69,10 +69,21 @@ cargo doc --open
 
 ## 比较猜测的数字和秘密数字
 
+Ordering也是一个枚举类型，它的成员是Less、Greater和Equal
+
+由于Secret_number是数字类型，Guess是字符串类型，因此无法直接进行比较，我们需要将Guess转换为数字类型
+
+- trim方法取出字符串开头和结尾的空白字符
+
+- parse方法将字符串解析为数字，但需要告诉Rust具体的数字类型，例如u32，就是无符号的32位整型数
+- parse方法调用容易出现错误，因此会返回Result类型
+
 ## 使用循环来允许多次猜测
 
 #### 1、猜测正确后退出
+- 使用loop+break来实现
 
 #### 2、处理无效输入
+- 使用match+continue来实现
 
 
